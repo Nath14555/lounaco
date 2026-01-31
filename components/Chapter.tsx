@@ -134,7 +134,7 @@ export function Chapter({ chapter, locale }: ChapterProps) {
 
       {/* Sections */}
       <div className="relative bg-neutral-50">
-        {chapter.sections.map((section) => (
+        {chapter.sections?.map((section) => (
           <Section key={section.id} section={section} locale={locale} />
         ))}
       </div>

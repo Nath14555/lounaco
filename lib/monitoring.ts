@@ -92,12 +92,8 @@ export function clearUserContext(): void {
 /**
  * Track Web Vitals
  */
-export function reportWebVitals(metric: {
-  id: string;
-  name: string;
-  value: number;
-  label: 'web-vital' | 'custom';
-}): void {
+export function reportWebVitals(metric: any): void {
+  // Type is 'any' to support web-vitals library types (CLSMetric, FCPMetric, etc.)
   // Log in development
   if (process.env.NODE_ENV === 'development') {
     console.log('[Web Vitals]', metric);

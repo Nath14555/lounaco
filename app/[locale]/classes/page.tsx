@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { classesData, Class } from '@/data/classes';
+import { classesData } from '@/data/classes';
 import { Frame } from '@/components/Frame';
 import { cn, formatCurrency, formatDuration } from '@/lib/utils';
 

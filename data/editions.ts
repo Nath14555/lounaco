@@ -17,7 +17,7 @@ export const MediaSchema = z.object({
   width: z.number().optional(),
   height: z.number().optional(),
   blurDataURL: z.string().optional(),
-  priority: z.boolean().default(false),
+  priority: z.boolean().optional(),
 });
 
 export const CardSchema = z.object({
@@ -25,9 +25,9 @@ export const CardSchema = z.object({
   title: LocalizedStringSchema,
   description: LocalizedStringSchema,
   media: MediaSchema.optional(),
-  tags: z.array(z.string()).default([]),
-  featured: z.boolean().default(false),
-  order: z.number().default(0),
+  tags: z.array(z.string()).optional(),
+  featured: z.boolean().optional(),
+  order: z.number().optional(),
   cta: z
     .object({
       label: LocalizedStringSchema,
@@ -42,10 +42,10 @@ export const SectionSchema = z.object({
   title: LocalizedStringSchema,
   subtitle: LocalizedStringSchema.optional(),
   description: LocalizedStringSchema.optional(),
-  layout: z.enum(['grid', 'carousel', 'stack', 'masonry']).default('grid'),
-  cards: z.array(CardSchema).default([]),
+  layout: z.enum(['grid', 'carousel', 'stack', 'masonry']).optional(),
+  cards: z.array(CardSchema).optional(),
   backgroundColor: z.string().optional(),
-  ornamentStyle: z.enum(['none', 'light', 'heavy']).default('light'),
+  ornamentStyle: z.enum(['none', 'light', 'heavy']).optional(),
 });
 
 export const ChapterSchema = z.object({
@@ -56,12 +56,12 @@ export const ChapterSchema = z.object({
   hero: z
     .object({
       media: MediaSchema,
-      overlay: z.boolean().default(true),
-      height: z.enum(['screen', 'half', 'third']).default('screen'),
+      overlay: z.boolean().optional(),
+      height: z.enum(['screen', 'half', 'third']).optional(),
     })
     .optional(),
-  sections: z.array(SectionSchema).default([]),
-  order: z.number().default(0),
+  sections: z.array(SectionSchema).optional(),
+  order: z.number().optional(),
   color: z.string().optional(), // Theme color for chapter
 });
 
@@ -118,6 +118,7 @@ export const editionsData: EditionsData = {
           type: 'video',
           src: '/videos/hero-movement.mp4',
           poster: '/images/hero-movement-poster.jpg',
+          priority: true,
           alt: {
             en: 'Flowing Pilates movements in baroque studio',
             fr: 'Mouvements de Pilates fluides dans un studio baroque',
@@ -449,6 +450,7 @@ export const editionsData: EditionsData = {
         media: {
           type: 'image',
           src: '/images/studio-hero.jpg',
+          priority: true,
           alt: {
             en: 'Louna&Co baroque studio interior',
             fr: 'Intérieur du studio baroque Louna&Co',

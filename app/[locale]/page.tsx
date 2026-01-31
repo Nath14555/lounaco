@@ -13,7 +13,7 @@ export default function HomePage({ params }: HomePageProps) {
   const { chapters } = editionsData;
 
   // Sort chapters by order
-  const sortedChapters = [...chapters].sort((a, b) => a.order - b.order);
+  const sortedChapters = [...chapters].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
   return (
     <>

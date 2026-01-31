@@ -31,14 +31,16 @@ export function Providers({ children, locale, messages }: ProvidersProps) {
 
   // Report Web Vitals
   useEffect(() => {
-    if (typeof window !== 'undefined' && 'web-vital' in window) {
-      const { onCLS, onFID, onFCP, onLCP, onTTFB } = require('web-vitals');
-
-      onCLS(reportWebVitals);
-      onFID(reportWebVitals);
-      onFCP(reportWebVitals);
-      onLCP(reportWebVitals);
-      onTTFB(reportWebVitals);
+    if (typeof window !== 'undefined') {
+      import('web-vitals').then(({ onCLS, onFID, onFCP, onLCP, onTTFB }) => {
+        onCLS(reportWebVitals);
+        onFID(reportWebVitals);
+        onFCP(reportWebVitals);
+        onLCP(reportWebVitals);
+        onTTFB(reportWebVitals);
+      }).catch(() => {
+        // web-vitals not available, skip
+      });
     }
   }, []);
 

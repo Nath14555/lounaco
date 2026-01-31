@@ -5,7 +5,6 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { trackVideoPlay, trackVideoComplete } from '@/lib/analytics';
 import { stopScroll, startScroll } from '@/lib/scroll/engine';
-import { cn } from '@/lib/utils';
 
 interface VideoModalProps {
   isOpen: boolean;

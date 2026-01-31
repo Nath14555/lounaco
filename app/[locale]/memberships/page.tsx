@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl';
 import { Frame } from '@/components/Frame';
 
 const membershipTiers = [

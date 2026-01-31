@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import { Playfair_Display, Inter, Cormorant_Garamond } from 'next/font/google';
-import { NextIntlClientProvider } from 'next-intl';
+// Google Fonts temporarily disabled due to network constraints
+// import { Playfair_Display, Inter, Cormorant_Garamond } from 'next/font/google';
 import { getMessages } from 'next-intl/server';
 import { locales, isValidLocale, localeMetadata } from '@/lib/i18n';
 import { Providers } from '../providers';
@@ -11,9 +11,12 @@ import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import '../globals.css';
 
 // ============================================================================
-// FONTS
+// FONTS - Using system fonts (Google Fonts disabled due to network)
 // ============================================================================
+// Note: In production with network access, uncomment the imports above
+// and the font configurations below
 
+/*
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-display',
@@ -33,6 +36,7 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
   weight: ['400', '600'],
 });
+*/
 
 // ============================================================================
 // METADATA
@@ -141,7 +145,6 @@ export default async function LocaleLayout({
     <html
       lang={htmlLang}
       dir={direction}
-      className={`${playfair.variable} ${inter.variable} ${cormorant.variable}`}
     >
       <head>
         {/* JSON-LD Structured Data */}
