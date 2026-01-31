@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "classes": "Cours",
+    "memberships": "Abonnements",
+    "studio": "Studio",
+    "contact": "Contact",
+    "skipToContent": "Aller au contenu"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "bookNow": "Réserver",
+    "viewAll": "Voir tout",
+    "close": "Fermer",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "loading": "Chargement..."
+  },
+  "home": {
+    "title": "Louna&Co Pilates — Expérience de Mouvement Baroque",
+    "description": "Découvrez l'art du mouvement à travers notre méthodologie Pilates signature."
+  },
+  "classes": {
+    "title": "Nos Cours",
+    "description": "Des expériences organisées pour tous les corps",
+    "filterByLevel": "Filtrer par niveau",
+    "filterByEquipment": "Filtrer par équipement",
+    "allLevels": "Tous niveaux",
+    "beginner": "Débutant",
+    "intermediate": "Intermédiaire",
+    "advanced": "Avancé",
+    "duration": "{minutes} minutes",
+    "maxParticipants": "Max {count} participants",
+    "price": "{amount}€"
+  },
+  "memberships": {
+    "title": "Abonnements",
+    "description": "Choisissez le plan qui correspond à votre parcours",
+    "perMonth": "/mois",
+    "unlimited": "Cours illimités",
+    "limited": "{count} cours par mois"
+  },
+  "studio": {
+    "title": "Le Studio",
+    "description": "Un sanctuaire baroque pour la transformation"
+  },
+  "contact": {
+    "title": "Nous Rendre Visite",
+    "description": "Découvrez la différence baroque",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "hours": "Horaires"
+  },
+  "footer": {
+    "copyright": "© {year} Louna&Co Pilates. Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
+  },
+  "analytics": {
+    "chapterView": "Chapitre vu: {chapter}",
+    "sectionView": "Section vue: {section}",
+    "ctaClick": "CTA cliqué: {id}",
+    "videoPlay": "Vidéo lancée: {id}",
+    "videoComplete": "Vidéo terminée: {id}",
+    "languageSwitch": "Langue changée en {locale}"
+  }
+}

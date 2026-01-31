@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "classes": "Classes",
+    "memberships": "Memberships",
+    "studio": "Studio",
+    "contact": "Contact",
+    "skipToContent": "Skip to content"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "bookNow": "Book Now",
+    "viewAll": "View All",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "loading": "Loading..."
+  },
+  "home": {
+    "title": "Louna&Co Pilates — Baroque Movement Experience",
+    "description": "Discover the art of movement through our signature Pilates methodology."
+  },
+  "classes": {
+    "title": "Our Classes",
+    "description": "Curated experiences for every body",
+    "filterByLevel": "Filter by level",
+    "filterByEquipment": "Filter by equipment",
+    "allLevels": "All Levels",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "duration": "{minutes} minutes",
+    "maxParticipants": "Max {count} participants",
+    "price": "€{amount}"
+  },
+  "memberships": {
+    "title": "Memberships",
+    "description": "Choose the plan that fits your journey",
+    "perMonth": "/month",
+    "unlimited": "Unlimited classes",
+    "limited": "{count} classes per month"
+  },
+  "studio": {
+    "title": "The Studio",
+    "description": "A baroque sanctuary for transformation"
+  },
+  "contact": {
+    "title": "Visit Us",
+    "description": "Experience the baroque difference",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Hours"
+  },
+  "footer": {
+    "copyright": "© {year} Louna&Co Pilates. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "analytics": {
+    "chapterView": "Chapter viewed: {chapter}",
+    "sectionView": "Section viewed: {section}",
+    "ctaClick": "CTA clicked: {id}",
+    "videoPlay": "Video played: {id}",
+    "videoComplete": "Video completed: {id}",
+    "languageSwitch": "Language switched to {locale}"
+  }
+}
