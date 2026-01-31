@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { Chapter, LocalizedString } from '@/data/editions';
 import { useActiveSection } from '@/hooks/useActiveSection';
-import { useScrollProgress } from '@/hooks/useScrollProgress';
 import { scrollTo } from '@/lib/scroll/engine';
 import { cn } from '@/lib/utils';
 
@@ -24,12 +23,19 @@ export function ChapterNav({ chapters, locale }: ChapterNavProps) {
   });
 
   const [isVisible, setIsVisible] = useState(false);
-  const pageProgress = useScrollProgress();
 
   // Show nav after scrolling past first screen
   useEffect(() => {
-    setIsVisible(pageProgress > 0.1);
-  }, [pageProgress]);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsVisible(scrollPosition > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleChapterClick = (chapterId: string) => {
     scrollTo(`#${chapterId}`, {
@@ -57,11 +63,6 @@ export function ChapterNav({ chapters, locale }: ChapterNavProps) {
         <ul className="flex items-center justify-center gap-2 md:gap-6">
           {chapters.map((chapter, index) => {
             const isActive = activeSection === chapter.id;
-            const chapterProgress = useScrollProgress(
-              typeof window !== 'undefined'
-                ? document.getElementById(chapter.id)
-                : null
-            );
 
             return (
               <li key={chapter.id}>
@@ -80,18 +81,7 @@ export function ChapterNav({ chapters, locale }: ChapterNavProps) {
                     locale
                   )}`}
                 >
-                  <span className="relative z-10">
-                    {getLocalizedText(chapter.title, locale)}
-                  </span>
-
-                  {/* Progress indicator */}
-                  {isActive && (
-                    <div
-                      className="absolute bottom-0 left-0 h-0.5 bg-gold transition-all duration-300"
-                      style={{ width: `${chapterProgress * 100}%` }}
-                      aria-hidden="true"
-                    />
-                  )}
+                  {getLocalizedText(chapter.title, locale)}
                 </button>
               </li>
             );

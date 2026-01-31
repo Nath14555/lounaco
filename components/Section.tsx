@@ -87,7 +87,7 @@ export function Section({ section, locale }: SectionProps) {
     carousel: 'flex overflow-x-auto gap-8 snap-x snap-mandatory',
     stack: 'flex flex-col gap-12',
     masonry: 'columns-1 md:columns-2 gap-8',
-  }[section.layout];
+  }[section.layout ?? 'grid'];
 
   return (
     <section
@@ -99,7 +99,7 @@ export function Section({ section, locale }: SectionProps) {
       )}
     >
       {/* Ornament layers */}
-      {section.ornamentStyle !== 'none' && (
+      {(section.ornamentStyle ?? 'light') !== 'none' && (
         <>
           <OrnamentLayer variant="grain" />
           {section.ornamentStyle === 'heavy' && <OrnamentLayer variant="vignette" />}
@@ -126,7 +126,7 @@ export function Section({ section, locale }: SectionProps) {
 
         {/* Cards */}
         <div ref={cardsRef} className={layoutClass}>
-          {section.cards.map((card) => (
+          {section.cards?.map((card) => (
             <div
               key={card.id}
               className={cn(
@@ -135,7 +135,7 @@ export function Section({ section, locale }: SectionProps) {
                 section.layout === 'masonry' && 'break-inside-avoid mb-8'
               )}
             >
-              <Frame ornate={card.featured}>
+              <Frame ornate={card.featured ?? false}>
                 {card.media && (
                   <div className="mb-6">
                     <MediaBlock media={card.media} locale={locale} />

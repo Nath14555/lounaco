@@ -42,7 +42,6 @@ export function initScrollEngine(options?: {
   duration?: number;
   easing?: (t: number) => number;
   smoothWheel?: boolean;
-  smoothTouch?: boolean;
 }) {
   if (typeof window === 'undefined') return;
 
@@ -61,7 +60,6 @@ export function initScrollEngine(options?: {
     orientation: 'vertical',
     gestureOrientation: 'vertical',
     smoothWheel: prefersReducedMotion ? false : (options?.smoothWheel ?? true),
-    smoothTouch: prefersReducedMotion ? false : (options?.smoothTouch ?? false),
     wheelMultiplier: 1,
     touchMultiplier: 2,
     infinite: false,
