@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 // Google Fonts temporarily disabled due to network constraints
 // import { Playfair_Display, Inter, Cormorant_Garamond } from 'next/font/google';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { locales, isValidLocale, localeMetadata } from '@/lib/i18n';
 import { Providers } from '../providers';
 import { SkipToContent } from '@/components/SkipToContent';
@@ -52,6 +52,9 @@ export async function generateMetadata({
   if (!isValidLocale(locale)) {
     return {};
   }
+
+  // Enable static rendering
+  setRequestLocale(locale);
 
   const isEnglish = locale === 'en';
 
@@ -135,6 +138,9 @@ export default async function LocaleLayout({
   if (!isValidLocale(locale)) {
     notFound();
   }
+
+  // Enable static rendering
+  setRequestLocale(locale);
 
   // Get messages for locale
   const messages = await getMessages();

@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { OrnamentLayer } from '@/components/OrnamentLayer';
 
 interface StudioPageProps {
@@ -8,6 +9,9 @@ interface StudioPageProps {
 
 export default function StudioPage({ params }: StudioPageProps) {
   const { locale } = params;
+
+  // Enable static rendering
+  setRequestLocale(locale);
 
   const content = {
     en: {

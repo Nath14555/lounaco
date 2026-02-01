@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { editionsData } from '@/data/editions';
 import { Chapter } from '@/components/Chapter';
 import { ChapterNav } from '@/components/ChapterNav';
@@ -10,6 +11,10 @@ interface HomePageProps {
 
 export default function HomePage({ params }: HomePageProps) {
   const { locale } = params;
+
+  // Enable static rendering
+  setRequestLocale(locale);
+
   const { chapters } = editionsData;
 
   // Sort chapters by order

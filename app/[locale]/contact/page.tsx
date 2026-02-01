@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { Frame } from '@/components/Frame';
 
 interface ContactPageProps {
@@ -8,6 +9,9 @@ interface ContactPageProps {
 
 export default function ContactPage({ params }: ContactPageProps) {
   const { locale } = params;
+
+  // Enable static rendering
+  setRequestLocale(locale);
 
   const content = {
     en: {

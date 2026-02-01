@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { Frame } from '@/components/Frame';
 
 const membershipTiers = [
@@ -64,6 +65,9 @@ interface MembershipsPageProps {
 
 export default async function MembershipsPage({ params }: MembershipsPageProps) {
   const { locale } = params;
+
+  // Enable static rendering
+  setRequestLocale(locale);
 
   return (
     <div className="min-h-screen pt-24 pb-16 px-6">
