@@ -25,6 +25,19 @@ const config: Config = {
           900: 'var(--color-primary-900)',
           950: 'var(--color-primary-950)',
         },
+        accent: {
+          50: 'var(--color-accent-50)',
+          100: 'var(--color-accent-100)',
+          200: 'var(--color-accent-200)',
+          300: 'var(--color-accent-300)',
+          400: 'var(--color-accent-400)',
+          500: 'var(--color-accent-500)',
+          600: 'var(--color-accent-600)',
+          700: 'var(--color-accent-700)',
+          800: 'var(--color-accent-800)',
+          900: 'var(--color-accent-900)',
+          950: 'var(--color-accent-950)',
+        },
         jewel: {
           purple: 'var(--color-jewel-purple)',
           emerald: 'var(--color-jewel-emerald)',
@@ -190,6 +203,21 @@ const config: Config = {
       },
 
       // ====================================================================
+      // BACKGROUNDS
+      // ====================================================================
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-radial-at-t': 'radial-gradient(circle at top, var(--tw-gradient-stops))',
+        'gradient-radial-at-b': 'radial-gradient(circle at bottom, var(--tw-gradient-stops))',
+        'gradient-radial-at-l': 'radial-gradient(circle at left, var(--tw-gradient-stops))',
+        'gradient-radial-at-r': 'radial-gradient(circle at right, var(--tw-gradient-stops))',
+        'gradient-radial-at-tl': 'radial-gradient(circle at top left, var(--tw-gradient-stops))',
+        'gradient-radial-at-tr': 'radial-gradient(circle at top right, var(--tw-gradient-stops))',
+        'gradient-radial-at-bl': 'radial-gradient(circle at bottom left, var(--tw-gradient-stops))',
+        'gradient-radial-at-br': 'radial-gradient(circle at bottom right, var(--tw-gradient-stops))',
+      },
+
+      // ====================================================================
       // BREAKPOINTS (already defined by Tailwind, extended here)
       // ====================================================================
       screens: {
@@ -210,6 +238,21 @@ const config: Config = {
         },
         '.text-pretty': {
           'text-wrap': 'pretty',
+        },
+        '.preserve-3d': {
+          'transform-style': 'preserve-3d',
+        },
+        '.backface-hidden': {
+          'backface-visibility': 'hidden',
+        },
+        '.perspective-1000': {
+          perspective: '1000px',
+        },
+        '.perspective-1500': {
+          perspective: '1500px',
+        },
+        '.perspective-2000': {
+          perspective: '2000px',
         },
       });
     },

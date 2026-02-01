@@ -49,6 +49,19 @@
   --color-neutral-100: #f5f2ef;
   --color-neutral-50: #faf9f7;
 
+  /* Accent (Gold/Amber Scale) */
+  --color-accent-950: #3d2e0f;
+  --color-accent-900: #5c4620;
+  --color-accent-800: #7a5e2b;
+  --color-accent-700: #8b6e3c;
+  --color-accent-600: #a67c52;
+  --color-accent-500: #c19a6b;
+  --color-accent-400: #d4b896;
+  --color-accent-300: #e8d7c3;
+  --color-accent-200: #f0d886;
+  --color-accent-100: #f5ede4;
+  --color-accent-50: #faf7f3;
+
   /* Accent Metallics */
   --color-gold: #d4af37;
   --color-gold-light: #f0d886;
