@@ -1,5 +1,5 @@
 import { setRequestLocale } from 'next-intl/server';
-import { HeroEditions } from '@/components/HeroEditions';
+import { HeroScrapbook } from '@/components/scrapbook/HeroScrapbook';
 import { SectionEditions } from '@/components/SectionEditions';
 import { CardEditions } from '@/components/CardEditions';
 
@@ -101,12 +101,8 @@ export default function HomePage({ params }: HomePageProps) {
 
   return (
     <>
-      {/* Hero Section */}
-      <HeroEditions
-        subtitle={content.hero.subtitle}
-        title={content.hero.title}
-        description={content.hero.description}
-      />
+      {/* Hero Section — scrapbook collage: everything pops out of the bag */}
+      <HeroScrapbook locale={locale} />
 
       {/* Chapter 1: Transform Your Practice */}
       <SectionEditions
